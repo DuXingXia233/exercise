@@ -166,13 +166,15 @@
 	height: 94px;
 	padding-right: 10px;
 	float: left;
-	filter: alpha(opacity:30);
-	opacity: 0.3;
+
 }
-.small_pic li.active {
+.small_pic img.active {
 	opacity: 1;
 	filter: alpha(opacity=100);
 }
-.small_pic li img {
+.small_pic img {
 	height:94px;
+
+	filter: alpha(opacity:30);
+	opacity: 0.3;
 }
