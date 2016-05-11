@@ -1,0 +1,84 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+#control {
+	margin: 20px auto;
+	width: 600px;
+}
+#content {
+	margin: 20px auto;
+	width: 500px;
+
+	background-color: #eee;
+}
+
+#root {
+	margin: 30px auto;
+	padding: 10px;
+
+	font-size: 14px;
+	line-height: 1.2;
+}
+
+.title {
+	position: relative;
+
+	margin: 5px;
+	padding-left: 10px;
+	height: 18px;
+
+
+	border-radius: 10px;
+	background-color: #c3de87;
+	cursor: pointer;
+}
+
+.title-btn {
+	position: absolute;
+	top: 1px;
+	width: 17px;
+	display: inline-block;
+	border-radius: 17px;
+
+	color: #FFF;
+}
+.title .del {
+	right: 10px;
+}
+.del:hover {
+	color: #333;
+}
+
+.title .add {
+	right: 30px;
+}
+.add:hover {
+	color: #AFECDE;
+}
+
+.floder,
+.file {
+	padding-left: 15px;
+	height: 28px;
+
+	overflow: hidden;
+	transition: height 0.5s;
+}
+.floder-tit,
+.file-tit {
+	cursor: default;
+}
+.processing, .found, .open{
+	height: auto;
+	transition: height 0.5s;
+}
+.active>.title {
+	background-color: #FEDCBA;
+}
+.found>.title {
+	background-color: #7A9CD3;
+}
+.processing>.title {
+	background-color: #ABEDFE;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>25</title>
+	<link rel="stylesheet" href="./fontello/css/fontello.css">
+	<link rel="stylesheet" href="./index.css">
+</head>
+<body>
+	<div id="control">
+		<label><input name="speed" type="number" placeholder="500"> 动画速度（ms）|</label>
+		<label>查询：<input name="search" type="text"></label>
+	</div>
+	<div id="content">
+		
+	</div>
+
+	
+
+
+	<script src="./task.js"></script>
+	<script>
+		var tree = createComposite({
+			"IT": {
+				"前端": {
+					"HTML":{
+						"语义化":{}
+					},
+					"CSS": {
+						"CSS 3": {}
+					},
+					"JAVASCRIPT": {
+						"ECMAScript": {},
+						"DOM": {},
+						"BOM": {}
+					},
+					"PHP": {
+
+					}
+				}
+			},
+			"社会科学": {
+				"社会": {
+					"社会主义核心价值观.txt":{},
+					"什么鬼": {
+						"编不下去了":{}
+					}
+				},
+				"科学": {"科学史.txt":{}}
+			},
+			"哲学": {"哲学史.txt":{}},
+			"图库": {
+				"123.jpg":{},
+				"福利": {"大福利":{"真有福利":{"下面就是福利":{"福利.png":{}}}}}
+
+			},
+			"其他": {}
+		}, document.querySelector("#content"));
+
+		function inputHandler() {
+			var inputs = Array.prototype.slice.call(document.querySelectorAll("input"));
+			var input;
+			var search, speed;
+			while(input=inputs.pop()) {
+				switch(input.name) {
+					case "search":
+					  search = input;
+					  break;
+					case "speed":
+					  speed = input;
+					  break;
+				}
+				
+			}
+			addEvent(search, "keyup", function(e) {
+				e = e || window.event;
+				var code = e.keyCode || e.which;
+
+				if (code === 13) {
+					var value = this.value;
+					tree.setDelayTime(speed.value);
+					if (value) {
+						tree.search(value);
+					}
+				}
+			});	
+		}
+		inputHandler();
+
+	</script>
+</body>
+</html>

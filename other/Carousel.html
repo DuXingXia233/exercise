@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>旋转木马</title>
+
+</head>
+<body>
+	<div class="carousel" id='target'>
+		<a href="#"><img src="./img/1.png" alt=""></a>
+		<a href="#"><img src="./img/2.png" alt=""></a>
+		<a href="#"><img src="./img/3.png" alt=""></a>
+		<a href="#"><img src="./img/4.png" alt=""></a>
+		<a href="#"><img src="./img/5.png" alt=""></a>
+		<a href="#"><img src="./img/6.png" alt=""></a>
+		<a href="#"><img src="./img/7.png" alt=""></a>
+		<a href="#"><img src="./img/8.png" alt=""></a>
+	</div>
+	<script src='./js/common.js'></script>
+	<script src='./js/carousel.js'></script>
+
+<script>
+		var target = document.querySelector('.carousel');
+		var carousel = new Carousel(target, {
+			width: 1000,
+			height: 300,
+			radiusX: 220,
+			radiusY: 70,
+			minScale: 0.6
+		});
+	</script>
+</body>
+</html>

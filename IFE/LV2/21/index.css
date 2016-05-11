@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	margin: 20px, auto;
+	width: 500px;
+}
+
+.tag-box {
+	display: inline-block;
+	
+	margin: 5px;
+	padding: 2px;
+
+
+	background-color: #123456;
+	color: #FFF;
+}
+
+.active {
+	background-color: #654321;
+	color: #123456;
+}

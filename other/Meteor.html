@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name='keywords' content='canvas, 前端练习'>
+	<title>流星雨</title>
+	<style>
+	div {
+		width: 1000px;
+		margin: auto;
+	}
+	#meteor {
+		background: url("./img/r.jpeg") ;
+		background-size: cover;
+	}
+	</style>
+</head>
+<body>
+	<div>
+		<canvas id='meteor'></canvas>
+
+		<form id='change' action="">
+			最大速度:<input data-name='speed' type="number" placeholder='默认值： 10'>
+			最大角度：<input data-name='angle' type="number" placeholder='默认值： 30'>
+			Y轴起始位置最低值：<input data-name='y' type="number" placeholder='默认值： 100'>
+			随机角度？<input class='toggle' data-name='random' type="button" value='开启'>	
+			<input  type="button" value="确认改变？">	
+		</form>
+	</div>
+
+
+	
+<script src='./js/common.js'></script>
+<script src="./js/meteor.js"></script>
+
+<script>
+// 
+var form = document.querySelector("#change");
+var inputs = form.querySelectorAll("input");
+var len = inputs.length;
+var options = {
+	canvas: {
+		element: document.getElementById("meteor"),
+		width: 1000,
+		height: 500,
+		num: 40
+	},
+	meteor: {
+		x: 1200,		// 流星起始 x轴随机位置波动范围 0~x
+		y: 100,			// 流星起始 y轴随机位置波动范围 0~y
+		length: 80,		// 太长 难看
+		width: 8, 		// 太宽 难看
+		speed: 10,
+		alpha: 1,
+		angle: 30,
+	
+		end: {
+			y: 400,
+			alpha: 0
+		},
+
+		random: false
+	}
+};
+createMeteor(options);
+
+
+
+addEvent(form, "click", function(event){
+	event = event || window.event;
+	var target = event.target || event.srcElement;
+	var change = {};
+	var put = inputs[len-1].value;
+
+	var i=0;
+	if (target.value === put) {
+
+		for(; i <len-2; i++) {
+			change[inputs[i].getAttribute("data-name")] = inputs[i].value;
+		}
+
+		for (i in change) {
+			options.meteor[i] = change[i];	
+		}
+	}
+	if (target.className === inputs[len-2].className) {
+		target.value === "开启" ? (target.value = "关闭", options.meteor['random'] = true ): (target.value = "开启", options.meteor['random'] = false );
+		
+	}
+
+});
+
+</script>	 
+</body>
+<!--  
+	代码参考  http://blog.csdn.net/jin123wang/article/details/7360270
+-->
+</html>
