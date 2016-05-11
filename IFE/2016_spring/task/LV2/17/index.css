@@ -1,0 +1,58 @@
+body {
+	background-color: #ccc
+}
+div {
+	margin: 0;
+	padding: 0;
+}
+fieldset {
+	padding:0 5px;
+	margin: 2px 0;
+	
+	text-align: center;
+	border: 1px solid #222;
+	border-radius: 10px;
+}
+.aqi-chart-wrap {
+	display: flex;
+
+	min-width: 550px;
+	height: 520px;
+
+	justify-content: center;
+	align-items: flex-end;
+	
+	border: 1px solid #333;
+	border-radius: 10px;
+}
+.chartGra {
+	position: relative;
+	
+	top: 0;
+
+	flex: 1 1 auto;
+	
+	cursor: pointer;
+	border: 1px solid #fff;
+	border-bottom-style: none;
+
+}
+
+.chartGra:hover {
+	border-color: #2f3ac9;
+}
+
+.chart-day {
+	width: 1%;
+}
+
+.chart-week {
+	margin: 0 3px;
+	width: 5%;
+}
+
+.chart-month {
+	margin: 0 10px;
+	width: 30%;
+}
+

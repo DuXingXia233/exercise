@@ -1,0 +1,157 @@
+body {
+	margin: 0;
+	padding: 0;
+	
+	min-width: 612px;
+}
+div {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	display: block;
+}
+
+.left {
+	float: left;
+}
+.default-container {
+	margin-bottom: 20px;
+
+	background-color: #eee;	
+	border: 1px solid #999;
+}
+
+.default-container:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+.default-item {
+
+	background-color: #fff;
+	border: 1px solid #999;	
+}
+
+.logo {
+	margin: 20px;
+	width: 80px;
+	height: 80px;
+
+	border: 1px solid #999;
+
+}
+
+.team {
+	float: left;
+}
+
+.team-name {
+	float: left;
+
+	font-size: 14px;
+}
+
+.title {
+	margin-left: 20px;
+}
+
+.message {
+	margin: 20px;
+	margin-top: 0; 
+	text-indent: 2em;
+}
+
+/**** 圣杯 ****/
+.containerA {
+	padding: 20px 160px 20px 240px;
+}
+
+.subA {
+	position: relative;
+	left: -220px;
+
+	margin-left: -100%;
+	width: 200px;
+}
+
+.mainA {
+
+	width: 100%;
+}
+
+.extraA {
+	position: relative;
+	right: -140px;
+	
+	margin-left: -124px;
+	width: 120px;
+}
+
+/**** 双飞翼 ****/
+.containerB {
+	padding: 20px;
+}
+.subB {
+
+	margin-left: -100%;
+	width: 200px;
+}
+
+.mainB {
+	width: 100%;
+
+}
+
+.mainB-content {
+	margin: 0px 140px 20px 220px;
+}
+
+.extraB {
+	
+	margin-left: -122px;
+	width: 120px;
+}
+
+/****  Flex ****/
+
+.containerC {
+	display: flex;
+	flex-flow: row nowrap; 
+	align-items: flex-start;
+
+	
+}
+
+.flex-sub {
+	margin: 20px;
+	width: 200px;
+
+	flex: 0 0 auto;
+	order: 1;
+}
+
+.flex-sub:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.flex-main {
+	margin: 20px 0;
+
+	flex: 1 1 auto;
+	order: 2;
+}
+
+
+.flex-extra {
+	margin: 20px;
+	width: 120px;
+
+	flex: 0 0 auto;
+	order: 3;
+}
+
+
